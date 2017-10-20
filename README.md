@@ -110,3 +110,4 @@ _mainTabBarController = [[MainTabBarController alloc] init];
 _window.rootViewController = _mainTabBarController;
 [_window makeKeyAndVisible];
 ```
+好了到这里最基本的整合过程就完成了，可下载本demo进行查看，希望本文章对你有帮助！
