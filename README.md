@@ -3,11 +3,10 @@
 ## 效果预览
 <img src="https://github.com/micyo202/YZNavTabBar/raw/master/20171020102449.gif" alt="效果预览" title="效果预览">
 
-## 基本介绍
-UINavigationController：同级页面之间的跳转，界面典型的特点就是页面上部有一UINavigationBar导航条，导航条可以设置标题、左上角的按钮（一般用于返回），右上角的按钮，也可以自定义这些元素。
-UITabBarController：父子页面之间的嵌套关系，界面典型的特点是耍耍下部有一UITabBar选项组，通过点击Tab，可切换上面的视图的变换。
+## 介绍
+**UINavigationController**：同级页面之间的跳转，界面典型的特点就是页面上部有一UINavigationBar导航条，导航条可以设置标题、左上角的按钮（一般用于返回），右上角的按钮，也可以自定义这些元素。
+**UITabBarController**：父子页面之间的嵌套关系，界面典型的特点是耍耍下部有一UITabBar选项组，通过点击Tab，可切换上面的视图的变换。
 UIViewController、UINavigationController、UITabBarController三者的整合使用，可以开发出大部分的App应用页面框架。
-本文就来介绍一下基本的搭建思路及步骤
 
 ## 思路
 我们需要把 Navigation View 加到 Tab Bar View 的内容上去，Tab Bar View再加到 Window 上去。就是 Window 套 UITabBarController，UITabBarController 套 UINavigationController, UINavigationController 套 UIViewController。
@@ -19,7 +18,7 @@ UIViewController、UINavigationController、UITabBarController三者的整合使
 ### 2.创建继承 UINavigationController 的类 MainNavigationController，在其对应的.m文件中
 
 在 viewDidLoad 方法中代码如下：
-```OC
+```C
 self.navigationBar.translucent = NO;// 设置导航栏不透明
 self.navigationBar.barTintColor = [UIColor blackColor];// 设置导航栏背景颜色
 self.navigationBar.tintColor = [UIColor whiteColor];// 设置导航栏itemBar字体颜色
@@ -27,7 +26,7 @@ self.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : [UI
 ```
 
 重写 pushViewController 方法，为了控制导航栏 push 页面隐藏底部 tabBar
-```OC
+```C
 #pragma mark - 重写pushViewController:方法
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if(self.viewControllers.count > 0){
@@ -40,7 +39,7 @@ self.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : [UI
 ### 3.创建继承 UITabBarController 的类 MainTabBarController，在其对应的.m文件中
 
 在 viewDidLoad 方法中代码如下：
-```OC
+```C
 self.tabBar.barTintColor = [UIColor blackColor];// 设置tabBar背景颜色
 self.tabBar.translucent= NO;// 设置tabBar不透明
 
@@ -93,7 +92,7 @@ UITabBarItem *item = [UITabBarItem appearance];// 获取tabBarItem的外观
 ### 4.创建显示的子视图：FirstViewContoller、SecondViewController、ThirdViewController、FourthViewController
 
 ### 5.在 AppDelegate.m 文件中的 didFinishLaunchingWithOptions 方法中添加如下代码：
-```OC
+```C
 // 隐藏顶部状态栏设为NO
 [UIApplication sharedApplication].statusBarHidden = NO;
 // 设置顶部状态栏字体为白色
