@@ -4,12 +4,13 @@
 <img src="https://github.com/micyo202/YZNavTabBar/raw/master/20171020102449.gif" alt="效果预览" title="效果预览">
 
 ## 介绍
-**UINavigationController**：同级页面之间的跳转，界面典型的特点就是页面上部有一UINavigationBar导航条，导航条可以设置标题、左上角的按钮（一般用于返回），右上角的按钮，也可以自定义这些元素。
-**UITabBarController**：父子页面之间的嵌套关系，界面典型的特点是耍耍下部有一UITabBar选项组，通过点击Tab，可切换上面的视图的变换。
+**UINavigationController**：同级页面之间的跳转，界面典型的特点就是页面上部有一UINavigationBar导航条，导航条可以设置标题、左上角的按钮（一般用于返回），右上角的按钮，也可以自定义这些元素。<br>
+**UITabBarController**：父子页面之间的嵌套关系，界面典型的特点是耍耍下部有一UITabBar选项组，通过点击Tab，可切换上面的视图的变换。<br>
 UIViewController、UINavigationController、UITabBarController三者的整合使用，可以开发出大部分的App应用页面框架。
 
 ## 思路
-我们需要把 Navigation View 加到 Tab Bar View 的内容上去，Tab Bar View再加到 Window 上去。就是 Window 套 UITabBarController，UITabBarController 套 UINavigationController, UINavigationController 套 UIViewController。
+我们需要把 Navigation View 加到 Tab Bar View 的内容上去，Tab Bar View再加到 Window 上去。<br>
+就是 Window 套 UITabBarController，UITabBarController 套 UINavigationController, UINavigationController 套 UIViewController。<br>
 但当页面使用 UITabBarController + UINavigationController 的时候，当跳转到详情页面的时候，如果 UITabBar 仍然存在的话就会造成逻辑混乱，用户体验也会下降，因此我们就有一个在详情页将 UITabBar 隐藏的需求，接下来就来介绍这个框架完美的搭建方式
 
 ## 步骤
