@@ -1,6 +1,6 @@
 # UINavigationController与UITabBarController整合Demo（纯代码模式）
 
-## 效果预览
+## 效果预览GIF
 <img src="https://github.com/micyo202/YZNavTabBar/raw/master/20171020102449.gif" alt="效果预览" title="效果预览">
 
 ## 介绍
