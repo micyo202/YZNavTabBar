@@ -18,6 +18,7 @@
 		18322A261F998C3E00AF9DA5 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18322A251F998C3E00AF9DA5 /* ThirdViewController.m */; };
 		18322A291F998C5200AF9DA5 /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18322A281F998C5200AF9DA5 /* FourthViewController.m */; };
 		18322A2C1F998D8700AF9DA5 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18322A2B1F998D8700AF9DA5 /* PushViewController.m */; };
+		18A274321FA9CBFC00E8FA0F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A274311FA9CBFC00E8FA0F /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		18322A281F998C5200AF9DA5 /* FourthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
 		18322A2A1F998D8700AF9DA5 /* PushViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
 		18322A2B1F998D8700AF9DA5 /* PushViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
+		18A274311FA9CBFC00E8FA0F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,16 +76,22 @@
 		18322A011F9989E500AF9DA5 /* YZNavTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				18A274301FA9CB2D00E8FA0F /* MainView */,
+				18A2742F1FA9CB0700E8FA0F /* CustomView */,
 				18322A021F9989E500AF9DA5 /* AppDelegate.h */,
 				18322A031F9989E500AF9DA5 /* AppDelegate.m */,
 				18322A0B1F9989E500AF9DA5 /* Assets.xcassets */,
 				18322A0D1F9989E500AF9DA5 /* LaunchScreen.storyboard */,
 				18322A101F9989E500AF9DA5 /* Info.plist */,
 				18322A111F9989E500AF9DA5 /* main.m */,
-				18322A1B1F998AB300AF9DA5 /* MainNavigationController.h */,
-				18322A1C1F998AB300AF9DA5 /* MainNavigationController.m */,
-				18322A181F998A8D00AF9DA5 /* MainTabBarController.h */,
-				18322A191F998A8D00AF9DA5 /* MainTabBarController.m */,
+				18A274311FA9CBFC00E8FA0F /* Images.xcassets */,
+			);
+			path = YZNavTabBar;
+			sourceTree = "<group>";
+		};
+		18A2742F1FA9CB0700E8FA0F /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
 				18322A1E1F998C2100AF9DA5 /* FirstViewController.h */,
 				18322A1F1F998C2100AF9DA5 /* FirstViewController.m */,
 				18322A211F998C2D00AF9DA5 /* SecondViewController.h */,
@@ -95,7 +103,18 @@
 				18322A2A1F998D8700AF9DA5 /* PushViewController.h */,
 				18322A2B1F998D8700AF9DA5 /* PushViewController.m */,
 			);
-			path = YZNavTabBar;
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		18A274301FA9CB2D00E8FA0F /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				18322A1B1F998AB300AF9DA5 /* MainNavigationController.h */,
+				18322A1C1F998AB300AF9DA5 /* MainNavigationController.m */,
+				18322A181F998A8D00AF9DA5 /* MainTabBarController.h */,
+				18322A191F998A8D00AF9DA5 /* MainTabBarController.m */,
+			);
+			path = MainView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18A274321FA9CBFC00E8FA0F /* Images.xcassets in Resources */,
 				18322A0F1F9989E500AF9DA5 /* LaunchScreen.storyboard in Resources */,
 				18322A0C1F9989E500AF9DA5 /* Assets.xcassets in Resources */,
 			);
