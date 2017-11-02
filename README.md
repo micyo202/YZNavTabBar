@@ -41,53 +41,48 @@ self.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : [UI
 
 在 viewDidLoad 方法中代码如下：
 ```C
-self.tabBar.barTintColor = [UIColor blackColor];// 设置tabBar背景颜色
-self.tabBar.translucent= NO;// 设置tabBar不透明
-
 NSArray *items = @[
                    @{
-                       @"className"			:   @"FirstViewController",
-                       @"title"         :   @"第一个",
-                       @"image"         :   @"",
-                       @"selectedImage"	:   @""
+                       CLASS_NAME       :   @"FirstViewController",
+                       TITLE            :   @"第一个",
+                       IMAGE            :   @"tabbar_news",
+                       SELECTED_IMAGE   :   @"tabbar_newsHL"
                        },
                    @{
-                       @"className"     :   @"SecondViewController",
-                       @"title"         :   @"第二个",
-                       @"image"         :   @"",
-                       @"selectedImage" :   @""
+                       CLASS_NAME       :   @"SecondViewController",
+                       TITLE            :   @"第二个",
+                       IMAGE            :   @"tabbar_app",
+                       SELECTED_IMAGE   :   @"tabbar_appHL"
                        },
                    @{
-                       @"className"     :   @"ThirdViewController",
-                       @"title"         :   @"第三个",
-                       @"image"         :   @"",
-                       @"selectedImage" :   @""
+                       CLASS_NAME       :   @"ThirdViewController",
+                       TITLE            :   @"第三个",
+                       IMAGE            :   @"tabbar_msg",
+                       SELECTED_IMAGE   :   @"tabbar_msgHL"
                        },
                    @{
-                       @"className"     :   @"FourthViewController",
-                       @"title"         :   @"第四个",
-                       @"image"         :   @"",
-                       @"selectedImage" :   @""
+                       CLASS_NAME       :   @"FourthViewController",
+                       TITLE            :   @"第四个",
+                       IMAGE            :   @"tabbar_mine",
+                       SELECTED_IMAGE   :   @"tabbar_mineHL"
                        }
                    ];
 
 NSMutableArray  *viewControllers = [[NSMutableArray alloc] init];
 // 使用block方法遍历集合
 [items enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-    
-    UIViewController *viewController = [[NSClassFromString(obj[@"className"]) alloc] init];// 根据类名称动态创建类
-    viewController.title = obj[@"title"];
-    viewController.tabBarItem.image = [UIImage imageNamed:obj[@"image"]];
-    viewController.tabBarItem.selectedImage = [UIImage imageNamed:obj[@"selectedImage"]];
-    
+
+    UIViewController *viewController = [[NSClassFromString(obj[CLASS_NAME]) alloc] init];// 根据类名称动态创建类
+    viewController.title = obj[TITLE];
+    viewController.tabBarItem.image = [UIImage imageNamed:obj[IMAGE]];
+    viewController.tabBarItem.selectedImage = [[UIImage imageNamed:obj[SELECTED_IMAGE]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
     MainNavigationController *mainNav = [[MainNavigationController alloc] initWithRootViewController:viewController];
     [viewControllers addObject:mainNav];
-    
+
 }];
 
 self.viewControllers = viewControllers;// 设置tabBar视图集合
-UITabBarItem *item = [UITabBarItem appearance];// 获取tabBarItem的外观
-[item setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor brownColor]} forState:UIControlStateSelected];// 设置tabBar选中颜色
 ```
 
 ### 4.创建显示的子视图：FirstViewContoller、SecondViewController、ThirdViewController、FourthViewController
