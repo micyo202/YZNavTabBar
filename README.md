@@ -18,14 +18,6 @@ UIViewController、UINavigationController、UITabBarController三者的整合使
 
 ### 2.创建继承 UINavigationController 的类 MainNavigationController，在其对应的.m文件中
 
-在 viewDidLoad 方法中代码如下：
-```C
-self.navigationBar.translucent = NO;// 设置导航栏不透明
-self.navigationBar.barTintColor = [UIColor blackColor];// 设置导航栏背景颜色
-self.navigationBar.tintColor = [UIColor whiteColor];// 设置导航栏itemBar字体颜色
-self.navigationBar.titleTextAttributes = @{ NSForegroundColorAttributeName : [UIColor whiteColor] };// 设置导航栏title标题字体颜色
-```
-
 重写 pushViewController 方法，为了控制导航栏 push 页面隐藏底部 tabBar
 ```C
 #pragma mark - 重写pushViewController:方法
